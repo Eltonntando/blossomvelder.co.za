@@ -2782,3 +2782,8 @@ input, select, textarea {
 			}
 
 	}
+
+	#img-gal {
+		height: 360px;
+		padding:  50px;
+	}
