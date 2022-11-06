@@ -1780,6 +1780,8 @@ input, select, textarea {
 	ul.menu {
 		list-style: none;
 		padding-left: 0;
+		background-color: black;
+		border-radius: 5px;
 	}
 
 		ul.menu li {
@@ -1928,6 +1930,8 @@ input, select, textarea {
 
 	#header-wrapper {
 		padding: 4.5em 0 3em 0;
+		background-color: white;
+		border-radius: 5px;
 	}
 
 	#features-wrapper {
@@ -1987,12 +1991,16 @@ input, select, textarea {
 		right: 0;
 		top: 45px;
 		font-size: 0.9em;
+		background-color: black;
+		border-radius: 5px;
 		
 	}
 
 		#nav ul {
 			list-style: none;
 			padding-left: 0;
+			background-color: black;
+		    border-radius: 5px;
 		}
 
 			#nav ul li {
@@ -2386,7 +2394,8 @@ input, select, textarea {
 
 			#nav {
 				display: inline-flex;
-				background-color: none;
+				background-color: black;
+		        border-radius: 5px;
 			}
 
 		/* Banner */
@@ -2788,6 +2797,11 @@ input, select, textarea {
 				text-align: left;
 			}
 
+	}
+
+	#nav {
+		background-color: black;
+		border-radius: 5px;
 	}
 
 	#img-gal {
