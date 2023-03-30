@@ -2027,7 +2027,7 @@ input, select, textarea {
 				}
 
 				#nav ul li:hover a, #nav ul li:hover span {
-					background: #fff;
+					background: blue;
 				}
 
 				#nav ul li.active a, #nav ul li.active span {
@@ -2178,8 +2178,9 @@ input, select, textarea {
   }
 
   .link a:hover {
-    background: lightgray;
+    background: blue;
   }
+
   .link-title {
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -2803,6 +2804,7 @@ input, select, textarea {
 		background-color: black;
 		border-radius: 5px;
 	}
+
 
 	#img-gal {
 		height: 360px;
