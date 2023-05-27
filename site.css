@@ -156,6 +156,7 @@ video{
     cursor: pointer;
     animation: header-nav 1s ease forwards;
     margin-left: 30px;
+    color: transparent;
 }
 .mobile-nav-bar{
     display: none;
