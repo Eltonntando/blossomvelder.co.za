@@ -349,12 +349,15 @@ tr{
     }
     .header-section .header-nav{
         width: 25%;
+        color: black;
     }
 
 
 
     .header-nav .header-nav-list{
-        display: none;
+        display: block;
+        background-color: black;
+        color: black;
         overflow: hidden;
         content: " ";
         height: 100%;
@@ -371,10 +374,12 @@ tr{
     }
     .header-nav span{
         display: none;
+        color: black;
     }
     .mobile-nav-bar{
         display: block;
         z-index: 9999;
+        color: white;
     }
     .hero-section .hero-content{
         height: 100%;
