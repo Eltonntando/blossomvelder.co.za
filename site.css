@@ -7,10 +7,10 @@
     --navBorderColor:#000;
 
     /* fonts  */
-    --mainFont:"poppins";
-    --secondaryFont:"Permanent Marker";
-    --mainTxtColor:#000;
-    --bntTxtColor:#000;
+    --mainFont:"Arial Rounded MT";
+    --secondaryFont:"Arial Rounded MT";
+    --mainTxtColor:linear-gradient(to right,#708F96,#AA895F);
+    --bntTxtColor:linear-gradient(to right,#708F96,#AA895F);
     --bntHoverTxtColor:#fff;
     --fs-header:1.5rem;
     --fw-header:700;
@@ -29,8 +29,8 @@
         --navBorderColor:#fff;
     
         /* fonts  */
-        --mainFont:"poppins";
-        --secondaryFont:"Permanent Marker";
+        --mainFont:"Arial";
+        --secondaryFont:"Arial";
         --mainTxtColor:#fff;
         --bntTxtColor:#fff;
         --bntHoverTxtColor:#000;
@@ -53,9 +53,9 @@
 body{
     height: 100%;
     width: 100%;
-    font-family: var(--mainFont);
+    font-family: Arial;
     padding:  40px 20px;
-    background-image: linear-gradient(to right,#E99331,#A0736E);
+    background-color: white;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -121,7 +121,8 @@ video{
     opacity: 0;
     animation: header-nav 0.5s ease forwards;
     background-color: none;
-    border-radius: 14px;   
+    border-radius: 14px; 
+    border: none;  
 }
 .header-nav ul li:nth-child(2){
     animation-delay: 0.5s;
@@ -136,7 +137,7 @@ video{
     text-decoration: none;
     font-size: 15px;
     font-weight: bolder;
-    color: white;
+    color: mediumblue;
     margin-left: 10px;
     margin-right: 10px;
     }
@@ -170,10 +171,10 @@ video{
     justify-content: space-between;
     position: relative;
     color: var(--mainTxtColor);
-    background-color: white;
+    background-color: transparent;
     border-radius: 14px;
-    border: 4px solid white;
-    margin-top: 10px;
+    border: none;
+    margin-top: 30px;
 }
 /* hero content  */
 .hero-section .hero-content{
@@ -183,50 +184,58 @@ video{
 
 h2{
     margin: 5px;
+    color: mediumblue;
 }
 
 h3{
     margin: 5px;
+    color: mediumblue;
 }
 
 h1{
     font-size: 40px;
     margin-top: 0px;
     color: black;
-    background-color: white;
+    background-color: transparent;
     border-radius: 14px;
-    border: 4px solid white;
+    border: none;
     margin-bottom: 10px;
     padding-left: 10px;
 }
 
 p{
     color: black;
-    background-color: white;
+    background-color: transparent;
     border-radius: 14px;
-    border: 4px solid white;
+    border: none;
+    padding: 10px;
    
 }
 
 form{
-    border: 2px solid orange;
+    border: 2px solid mediumblue;
     border-radius: 10px;
-    color: orange;
+    color: black;
 }
 
-tr{
-    border: 2px solid orange;
+input{
+    border: 2px solid mediumblue;
     border-radius: 10px;
-    color: orange;
+    color: black;
+}
+
+td{
+    border-radius: 10px;
+    color: black;
 }
 
 .contents
 {
 
-    border: 2px solid white;
+    border: 2px solid mediumblue;
     padding:  40px 20px;
     border-radius: 10px;
-    background-color: white;
+    background-color: transparent;
     border-radius: 20;
 }
 
@@ -257,9 +266,9 @@ tr{
     padding: 5px 10px;
     font-size: var(--fs-hero-content-bnt);
     font-weight: var(--fw-hero-content-bnt);
-    color: black;
+    color: mediumblue;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid mediumblue;
     background-color: transparent;
     cursor: pointer;
     opacity: 1;
@@ -326,8 +335,8 @@ tr{
         --navBorderColor:#fff;
     
         /* fonts  */
-        --mainFont:"poppins";
-        --secondaryFont:"Permanent Marker";
+        --mainFont:"fantasy";
+        --secondaryFont:"fantasy";
         --mainTxtColor:#fff;
         --bntTxtColor:#fff;
         --bntHoverTxtColor:#000;
@@ -349,15 +358,15 @@ tr{
     }
     .header-section .header-nav{
         width: 25%;
-        color: black;
+        color: mediumblue;
     }
 
 
 
     .header-nav .header-nav-list{
         display: block;
-        background-color: black;
-        color: black;
+        background-color: transparent;
+        color: mediumblue;
         overflow: hidden;
         content: " ";
         height: 100%;
@@ -379,7 +388,7 @@ tr{
     .mobile-nav-bar{
         display: block;
         z-index: 9999;
-        color: white;
+        color: mediumblue;
     }
     .hero-section .hero-content{
         height: 100%;
@@ -473,7 +482,6 @@ tr{
   color: black;
   margin-top: 150px;
   border-radius: 15px;
-  font-size: x-small
  }
  .widget li {
   margin-top: 2px;
