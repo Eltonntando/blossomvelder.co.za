@@ -120,7 +120,7 @@ video{
     list-style-type: none;
     opacity: 0;
     animation: header-nav 0.5s ease forwards;
-    background-color: white;
+    background-color: none;
     border-radius: 14px; 
     border: none;  
 }
@@ -365,13 +365,14 @@ td{
 
     .header-nav .header-nav-list{
         display: block;
-        background-color: transparent;
+        background-color: white;
         color: mediumblue;
         overflow: hidden;
         content: " ";
         height: 100%;
         width: 80%;
         border: grey;
+        border-radius: 20px;
         box-shadow: 3px 3px 10px var(--secondaryColor);
         flex-direction: column;
         justify-content: space-around;
