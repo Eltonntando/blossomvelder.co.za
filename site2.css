@@ -140,7 +140,6 @@ video{
     color: mediumblue;
     margin-left: 10px;
     margin-right: 10px;
-    background-color: white;
     }
 
 .highlight {
@@ -366,8 +365,8 @@ td{
 
     .header-nav .header-nav-list{
         display: block;
-        background-color: white;
-        color: mediumblue;
+        background-image: linear-gradient(to right,#1C3CA1,#031544);
+        color: white;
         overflow: hidden;
         content: " ";
         height: 100%;
