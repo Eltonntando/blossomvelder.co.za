@@ -369,7 +369,7 @@ td{
         content: " ";
         height: 100%;
         width: 80%;
-        border: grey;
+        border: 100% solid grey;
         background-color: white;
         border-radius: 20px;
         box-shadow: 3px 3px 10px var(--secondaryColor);
