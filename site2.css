@@ -368,8 +368,8 @@ td{
         content: " ";
         height: 100%;
         width: 80%;
-        border: 100px solid white;
-        background-color: white;
+        border: 100px solid var(--secondaryColor);
+        background-color: var(--secondaryColor);
         border-radius: 20px;
         box-shadow: 3px 3px 10px var(--secondaryColor);
         flex-direction: column;
