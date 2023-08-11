@@ -361,25 +361,7 @@ td{
         color: mediumblue;
     }
 
-    .header-nav .header-nav-list{
-        display: block;
-        color: white;
-        overflow: hidden;
-        content: " ";
-        height: 100%;
-        width: 80%;
-        border: 100px solid var(--secondaryColor);
-        background-color: var(--secondaryColor);
-        border-radius: 20px;
-        box-shadow: 3px 3px 10px var(--secondaryColor);
-        flex-direction: column;
-        justify-content: space-around;
-        position: absolute;
-        right: 30px;
-        z-index: 999;
-        transition: all 0.5s ease;
-        transform: translateX(200%) scale(0);
-    }
+
     .header-nav span{
         display: none;
         color: black;
