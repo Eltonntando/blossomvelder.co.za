@@ -363,13 +363,12 @@ td{
 
     .header-nav .header-nav-list{
         display: block;
-        background-image: linear-gradient(to right,#1C3CA1,#031544);
         color: white;
         overflow: hidden;
         content: " ";
         height: 100%;
         width: 80%;
-        border: 100% solid grey;
+        border: 100px solid white;
         background-color: white;
         border-radius: 20px;
         box-shadow: 3px 3px 10px var(--secondaryColor);
