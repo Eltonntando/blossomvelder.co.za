@@ -485,3 +485,29 @@ tr{
   list-style: none;
   text-decoration-line: none;
  }
+
+ p{
+    color: black;
+    background-color: transparent;
+    border-radius: 14px;
+    border: none;
+    padding: 10px;
+   
+}
+
+form{
+    border: 2px solid mediumblue;
+    border-radius: 10px;
+    color: black;
+}
+
+input{
+    
+    border-radius: 10px;
+    color: black;
+}
+
+td{
+    border-radius: 10px;
+    color: black;
+}
