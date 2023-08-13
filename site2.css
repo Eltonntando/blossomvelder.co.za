@@ -356,7 +356,7 @@ tr{
 
     .header-nav .header-nav-list{
         display: block;
-        background-image: linear-gradient(to right,#E99331,#A0736E);
+        background-color: lightgray;
         color: mediumblue;
         overflow: hidden;
         content: " ";
