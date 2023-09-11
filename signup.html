@@ -53,13 +53,14 @@
                 <div class="content-header">
                     <h1>Get Pluga.site up & running!</h1>
         
-                    <p>Once you've placed your order by Subscribing, we will reach out to you using contact details you entered to request site content. You have the flexibility to send the content through either Whatsapp or by using our digital form, which will be provided to you via email. Additionally, you'll receive an easy-to-follow upload guide to help you provide us with the necessary details, including information about yourself, your venture, content, projects, products, services, and files. We're here to make the process smooth and straightforward for you!
+                    <p>Once you've Subscribed, you'll be redirected to our chat box page where you'll be making requests for site content uploads and updates.There is also a guide to help you provide us with the necessary details on the chat box - information about yourself, your venture, content, projects, products, services, and files. We've made the process very smooth and straightforward for you!
                     </p>
                 </div>
  
  
  <div class="boxed" style="margin-top: 10px; text-align: ;">
-  <script type="text/javascript">
+
+ <script type="text/javascript">
 function shippingRequiredPayFast (formReference) {
 let cont = true;
 for( let i = 0; i < formReference.elements.length; i++ ) {
@@ -105,12 +106,14 @@ return true;
 <form onsubmit="return actionPayFastJavascript( this );" name="PayFastPayNowForm" action="https://www.payfast.co.za/eng/process" method="post">
 <input required type="hidden" name="cmd" value="_paynow">
 <input required type="hidden" name="receiver" pattern="[0-9]" value="13732042">
-<input type="hidden" name="return_url" value="https://www.blossomvelder.co.za/payment">
-<input required type="hidden" name="amount" value="400">
-<input required type="hidden" name="item_name" maxlength="255" value="Pluga.site">
-<input type="hidden" name="item_description" maxlength="255" value="Order your pluga.site here.">
+<input type="hidden" name="return_url" value="https://www.blossomvelder.co.za/chat.html">
+<input type="hidden" name="cancel_url" value="https://www.blossomvelder.co.za/index.html">
+<input type="hidden" name="notify_url" value="https://www.blossomvelder.co.za/pluga.html">
+<input required type="hidden" name="amount" value="500">
+<input required type="hidden" name="item_name" maxlength="255" value="Pluga-site Subscription">
+<input type="hidden" name="item_description" maxlength="255" value="Subscribe to the pluga-site chatbox and we'll get started with your website right away. ">
 <input required type="hidden" name="subscription_type" pattern="1"value="1">
-<input type="hidden" name="recurring_amount" value="400">
+<input type="hidden" name="recurring_amount" value="500">
 <input required type="hidden" name="cycles" pattern="[0-9]" value="0">
 <input required type="hidden" name="frequency" pattern="[0-9]" value="6">
 <table>
@@ -161,11 +164,18 @@ return true;
 <table>
 <tr>
 <td colspan=2 align=center>
-<input type="image" src="https://my.payfast.io/images/buttons/Subscribe/Light-Large-Subscribe.png" alt="Subscribe" title="Subscribe with Payfast">
+<input type="image" src="https://my.payfast.io/images/buttons/Subscribe/Dark-Small-Subscribe.png" alt="Subscribe" title="Subscribe with Payfast">
 </td>
 </tr>
 </table>
 </form>
+
+
+
+
+
+
+
 
 <p>
 Package comes with:
