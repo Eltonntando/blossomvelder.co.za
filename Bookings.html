@@ -1,32 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="shortcut icon" type="x-icon" href="images/agency.logo.png">
+  <title>bookings</title>
+  <link rel="stylesheet" href="site.css" />
+  <!-- Font Awesome icon cdn -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <script src="https://kit.fontawesome.com/61003df5a9.js" crossorigin="anonymous"></script>
 
 
-<link rel="shortcut icon" type="x-icon" href="images/agency.logo.png">
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7WB693WKF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <style>
+    .share-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      display: inline-block;
+      align-self: left;
+      margin-right: 70%;
+      margin-bottom: 5%;
+    }
 
-  gtag('config', 'G-G7WB693WKF');
-</script>
+    .social-platforms {
+      display: none;
+    }
 
+    .social-platforms.show {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
 
+    .social-platforms a {
+      margin: 8px;
+      color: white;
+      font-size: 30px;
+    }
+  </style>
+  <script>
+    function showSocialPlatforms() {
+      const socialPlatforms = document.querySelector('.social-platforms');
+      socialPlatforms.classList.toggle('show');
+    }
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blossom.</title>
-    <!-- font awesome cdn  -->
-    <script src="https://kit.fontawesome.com/46b7ceee20.js" crossorigin="anonymous"></script>
+    function shareLink(platform) {
+      var linkToShare = "https://elton01.netlify.app/booking.html"; // Replace with your link to share
+      var socialUrl;
 
-    <!-- custom css  -->
-    <link rel="stylesheet" href="site.css">
+      if (platform === 'facebook') {
+        socialUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(linkToShare);
+      } else if (platform === 'instagram') {
+        socialUrl = 'https://www.instagram.com/share?url=' + encodeURIComponent(linkToShare);
+      } else if (platform === 'email') {
+        socialUrl = 'mailto:?body=' + encodeURIComponent(linkToShare);
+      } else if (platform === 'whatsapp') {
+        socialUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(linkToShare);
+      }
 
-<title>Booking Section</title>
+      window.open(socialUrl, '_blank');
+    }
+  </script>
+
+</head>
+
+  <title>Booking Section</title>
   <style>
     .container {
       width: 400px;
@@ -64,20 +106,24 @@
   <script>
     function sendBookingDetails() {
       // Get the input values
-      var eventName = document.getElementById('event-name').value;
-      var eventDate = document.getElementById('event-date').value;
+      var clientName = document.getElementById('client-name').value;
+      var contactNumber = document.getElementById('contact-number').value;
+      var emailAddress = document.getElementById('email-address').value;
       var eventDescription = document.getElementById('event-description').value;
+      var eventDate = document.getElementById('event-date').value;
 
       // Compose the message
-      var message = "Event Name: " + eventName + "\n"
-            + "Event Date: " + eventDate + "\n"
-            + "Event Description: " + eventDescription;
-
+      var message = "Client Name: " + clientName + "\n"
+            + "Contact Number: " + contactNumber + "\n"
+            + "Email Address: " + emailAddress + "\n"
+            + "Service/Event Name & Description: " + eventDescription + "\n"
+            + "Event Date: " + eventDate;
+            
       // Send via email
       var emailLink = "mailto:eltonntando@gmail.com?subject=Booking Request&body=" + encodeURIComponent(message);
 
       // Send via WhatsApp
-      var whatsappLink = "https://wa.me/0793795379/?text=" + encodeURIComponent(message);
+      var whatsappLink = "https://wa.me/+27793795379/?text=" + encodeURIComponent(message);
 
       // Choose the platform based on user selection
       var platform = document.getElementById('platform').value;
@@ -98,15 +144,15 @@
     </div>
 
       <div class="buttons" style="text-align: center;">
-        <button onclick="window.location.href='Services.html';">
-          <i class="fa-solid fa-image"></i>Services
+        <button style="border-radius: 15px; border-color: transparent;" onclick="window.location.href='gallery.html';">
+          <i class="fa-solid fa-image"></i>Gallery
         </button>
 
-      <button onclick="window.location.href='index.html';">
+      <button style="border-radius: 15px; border-color: transparent;" onclick="window.location.href='index.html';">
           <i class="fa-solid fa-house"></i>Home
         </button>
       </div>
-      <hr>
+      
       
         
 
@@ -116,16 +162,22 @@
 
 
 
-  <div class="container">
+   <div class="container">
     <h2>Booking Section</h2>
-    <label for="event-name">Service:</label>
-    <input type="text" id="event-name">
+    <label for="event-name">Name:</label>
+    <input type="text" id="client-name">
 
-    <label for="event-date">Date needed:</label>
-    <input type="text" id="event-date">
+    <label for="contact-number">Contact number:</label>
+    <input type="text" id="contact-number">
 
-    <label for="event-description">Any spcifications:</label>
+    <label for="email-address">E-mail Address:</label>
+    <input type="text" id="email-address">
+
+    <label for="event-description">Service/Event name & Description:</label>
     <textarea id="event-description"></textarea>
+
+    <label for="event-date">Date:</label>
+    <input type="text" id="event-date">
 
     <label for="platform">Send via:</label>
     <select id="platform">
@@ -133,15 +185,51 @@
       <option value="whatsapp">WhatsApp</option>
     </select>
 
-    <button onclick="sendBookingDetails()"><i class="fa-solid fa-paper-plane"></i></button>
+    <button style="border-radius: 15px; border-color: transparent;" onclick="sendBookingDetails()"><i class="fa-solid fa-paper-plane"></i></button>
   </div>
 
 
 <div class="share-button" onclick="showSocialPlatforms()"><i class="fas fa-share"></i>Share Plug</div>
   <div class="social-platforms">
-    <a href="https://eltone.netlify.app/booking.html" onclick="shareLink('facebook')"><i class="fab fa-facebook" style="color: blue"></i></a>
-    <a href="https://eltone.netlify.app/booking.html" onclick="shareLink('instagram')"><i class="fab fa-instagram" style="color: purple;"></i></a>
-    <a href="https://eltone.netlify.app/booking.html" onclick="shareLink('email')"><i class="fas fa-envelope" style="color: red"></i></a>
-    <a href="https://eltone.netlify.app/booking.html" onclick="shareLink('whatsapp')"><i class="fab fa-whatsapp" style="color: green"></i></a>
+    <a href="https://www.blossomvelder.co.za/booking.html" onclick="shareLink('facebook')"><i class="fab fa-facebook" style="color: blue"></i></a>
+    <a href="https://www.blossomvelder.co.za/booking.html" onclick="shareLink('instagram')"><i class="fab fa-instagram" style="color: purple;"></i></a>
+    <a href="https://www.blossomvelder.co.za/booking.html" onclick="shareLink('email')"><i class="fas fa-envelope" style="color: red"></i></a>
+    <a href="https://www.blossomvelder.co.za/booking.html" onclick="shareLink('whatsapp')"><i class="fab fa-whatsapp" style="color: green"></i></a>
   </div>
 </div>
+
+<div class="outer-footer">
+  <div class="widget links">
+                    <ul class="style2">
+                       <li><a href="https://www.termsfeed.com/live/572f947c-5a58-463a-ab32-e2e2e2c76357" style="color: black; font-size: x-small;">Privacy Policy</a></li>
+                      <li><a href="https://www.termsfeed.com/live/3667089f-60d2-499c-958c-9b8a44bc1dec" style="color: black; font-size: x-small;">terms</a></li>
+                    </ul>
+                  </div>
+<footer>
+</div>
+
+<p style="font-size: x-small; background-color: transparent; text-align: center; border: none;">+27 65 737 1848</p>
+
+<p style="font-size: x-small; background-color: transparent; text-align: center; border: none;">South Africa<br>Mbombela<br>Mpumalanga<br>1352</p>
+
+            <div class="buttons" style="text-align: center;">
+                 <button onclick="window.location.href='https://web.facebook.com/blossomvelder/';" style="border: 2px solid black; background-color: transparent; border-radius: 11px; color: black;">
+                    <i class="fa-brands fa-square-facebook" style=" background-color: transparent; border-radius: 11px; color: black;"></i>Facebook
+                </button>
+
+                <button onclick="window.location.href='https://www.instagram.com/blossomvelder01/?hl=en';" style="border: 2px solid black; background-color: transparent; border-radius: 11px; color: black;">
+                    <i class="fa-brands fa-square-instagram" style=" background-color: transparent; border-radius: 11px; color: black;"></i>Instagram
+                </button>
+                
+                 <button onclick="window.location.href='https://www.youtube.com/channel/UC5AzuVWZuJUGYBChW05UKNQ?view_as=subscriber';" style="border: 2px solid black; background-color: transparent; border-radius: 11px; color: black;">
+                    <i class="fa-brands fa-square-youtube" style=" background-color: transparent; border-radius: 11px; color: black;"></i>YouTube
+                </button>
+            </div>
+    <p style="font-size: x-small; background-color: transparent; text-align: center; border: none;">Copyright &copy; 2023 Pluga.site All Rigths Reserved. website by Blossom Velder pty, Ltd</p>
+  </div>
+</footer> 
+
+
+    <script src="site2.js"></script>
+</body>
+</html>
