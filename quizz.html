@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Quiz</title>
+    <style>
+        /* Your existing styles go here */
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 50px;
+        }
+        .quiz-container {
+            max-width: 500px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        input {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Website Quiz</h1>
+
+    <form id="quiz-form">
+        <!-- Your existing form goes here -->
+
+         <form id="quiz-form">
+        <label for="q1">1. Does having a website increase your business's visibility to potential customers?</label>
+        <input type="radio" name="q1" value="A"> A) Yes
+        <input type="radio" name="q1" value="B"> B) No
+
+        <label for="q2">2. Can a website serve as an effective platform for showcasing your products or services 24/7?</label>
+        <input type="radio" name="q2" value="A"> A) Yes
+        <input type="radio" name="q2" value="B"> B) No
+
+        <label for="q3">3. Does a website provide a centralized location for potential customers to learn more about your venture?</label>
+        <input type="radio" name="q3" value="A"> A) Yes
+        <input type="radio" name="q3" value="B"> B) No
+
+        <label for="q4">4. Can a website help establish credibility and trust with your target audience?</label>
+        <input type="radio" name="q4" value="A"> A) Yes
+        <input type="radio" name="q4" value="B"> B) No
+
+        <label for="q5">5. Does a website offer the potential for online sales and revenue generation for your venture?</label>
+        <input type="radio" name="q5" value="A"> A) Yes
+        <input type="radio" name="q5" value="B"> B) No
+
+        <br>
+        <button type="button" onclick="calculateScore()">Submit</button>
+    </form>
+
+    <p id="result"></p>
+</div>
+
+<script>
+    function calculateScore() {
+        var score = 0;
+
+        // Loop through each question and check the selected answer
+        for (var i = 1; i <= 5; i++) {
+            var selectedOption = document.querySelector('input[name="q' + i + '"]:checked');
+            if (selectedOption && selectedOption.value === 'A') {
+                score++;
+            }
+        }
+
+        // Display the result
+        var resultElement = document.getElementById('result');
+        resultElement.innerHTML = 'Your score: ' + score + ' out of 5';
+
+        // Additional result messages based on the score
+        if (score === 5) {
+            resultElement.innerHTML += '<br>Your venture does really need a website at this point.';
+        } else if (score >= 3) {
+            resultElement.innerHTML += '<br>Your venture might use a website at this point.';
+        } else {
+            resultElement.innerHTML += '<br>Your venture does not need a website at this point.';
+        }
+    }
+</script>
+
+</body>
+</html>
