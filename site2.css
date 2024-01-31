@@ -757,14 +757,22 @@ td{
     }
 }
 
+
+
+.cirular{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+}
+
 .wrapper{
   width: 800px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  text-align: center;
-  margin-left: 12%;
 }
 .wrapper .card{
   background: #fff;
@@ -803,7 +811,7 @@ td{
 }
 .card .circle .box span,
 .wrapper .card .text{
-  background: blue;
+  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
