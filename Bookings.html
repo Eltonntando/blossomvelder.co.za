@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <link rel="shortcut icon" type="x-icon" href="images/agency.logo.png">
-  <title>bookings</title>
+  <title>Inquire</title>
   <link rel="stylesheet" href="site.css" />
   <!-- Font Awesome icon cdn -->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -11,69 +11,12 @@
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-  <style>
-    .share-button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 14px;
-      cursor: pointer;
-      display: inline-block;
-      align-self: left;
-      margin-right: 70%;
-      margin-bottom: 5%;
-    }
-
-    .social-platforms {
-      display: none;
-    }
-
-    .social-platforms.show {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-    }
-
-    .social-platforms a {
-      margin: 8px;
-      color: white;
-      font-size: 30px;
-    }
-  </style>
-  <script>
-    function showSocialPlatforms() {
-      const socialPlatforms = document.querySelector('.social-platforms');
-      socialPlatforms.classList.toggle('show');
-    }
-
-    function shareLink(platform) {
-      var linkToShare = "https://elton01.netlify.app/booking.html"; // Replace with your link to share
-      var socialUrl;
-
-      if (platform === 'facebook') {
-        socialUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(linkToShare);
-      } else if (platform === 'instagram') {
-        socialUrl = 'https://www.instagram.com/share?url=' + encodeURIComponent(linkToShare);
-      } else if (platform === 'email') {
-        socialUrl = 'mailto:?body=' + encodeURIComponent(linkToShare);
-      } else if (platform === 'whatsapp') {
-        socialUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(linkToShare);
-      }
-
-      window.open(socialUrl, '_blank');
-    }
-  </script>
-
-</head>
-
-  <title>Booking Section</title>
+ 
   <style>
     .container {
       width: 400px;
       margin: 0 auto;
-      background-color: orange;
+      background-color: white;
       border-radius: 14px;
       padding-bottom: 10px;
     }
@@ -143,11 +86,6 @@
   <div class="cover" style="height: auto; width: auto; background-color: transparent; border-radius: 95px; margin-top: 20px;">
     </div>
 
-      <div class="buttons" style="text-align: center;">
-        <button style="border-radius: 15px; border-color: transparent;" onclick="window.location.href='gallery.html';">
-          <i class="fa-solid fa-image"></i>Gallery
-        </button>
-
       <button style="border-radius: 15px; border-color: transparent;" onclick="window.location.href='index.html';">
           <i class="fa-solid fa-house"></i>Home
         </button>
@@ -188,15 +126,6 @@
     <button style="border-radius: 15px; border-color: transparent;" onclick="sendBookingDetails()"><i class="fa-solid fa-paper-plane"></i></button>
   </div>
 
-
-<div class="share-button" onclick="showSocialPlatforms()"><i class="fas fa-share"></i>Share Plug</div>
-  <div class="social-platforms">
-    <a href="https://www.blossomvelder.co.za/booking.html" onclick="shareLink('facebook')"><i class="fab fa-facebook" style="color: blue"></i></a>
-    <a href="https://www.blossomvelder.co.za/booking.html" onclick="shareLink('instagram')"><i class="fab fa-instagram" style="color: purple;"></i></a>
-    <a href="https://www.blossomvelder.co.za/booking.html" onclick="shareLink('email')"><i class="fas fa-envelope" style="color: red"></i></a>
-    <a href="https://www.blossomvelder.co.za/booking.html" onclick="shareLink('whatsapp')"><i class="fab fa-whatsapp" style="color: green"></i></a>
-  </div>
-</div>
 
 <div class="outer-footer">
   <div class="widget links">
