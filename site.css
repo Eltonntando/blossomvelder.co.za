@@ -27,7 +27,7 @@
         --primaryColor:#000;
         --secondaryColor:#fff;
         --navBorderColor:#fff;
-    
+
         /* fonts  */
         --mainFont:"poppins";
         --secondaryFont:"Permanent Marker";
@@ -49,6 +49,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    margin-left: 0px;
 }
 body{
     height: 100%;
@@ -121,7 +122,7 @@ video{
     opacity: 0;
     animation: header-nav 0.5s ease forwards;
     background-color: none;
-    border-radius: 14px;   
+    border-radius: 14px;
 }
 .header-nav ul li:nth-child(2){
     animation-delay: 0.5s;
@@ -174,6 +175,7 @@ video{
     border-radius: 14px;
     border: 4px solid white;
     margin-top: 10px;
+    background-image: url(Images/Here-back.png);
 }
 /* hero content  */
 .hero-section .hero-content{
@@ -194,7 +196,7 @@ h1{
     margin-top: 0px;
     color: black;
     background-color: white;
-    border-radius: 14px;
+    border-radius: 10px;
     border: 4px solid white;
     margin-bottom: 10px;
     padding-left: 10px;
@@ -205,7 +207,7 @@ p{
     background-color: white;
     border-radius: 14px;
     border: 4px solid white;
-   
+
 }
 
 form{
@@ -301,7 +303,7 @@ tr{
 
 }
 .social-icon-list i:hover{
-    transform: translateY(-10px) scale(1.1); 
+    transform: translateY(-10px) scale(1.1);
 }
 
 
@@ -324,7 +326,7 @@ tr{
         --primaryColor:#000;
         --secondaryColor:#fff;
         --navBorderColor:#fff;
-    
+
         /* fonts  */
         --mainFont:"poppins";
         --secondaryFont:"Permanent Marker";
@@ -392,7 +394,7 @@ tr{
         bottom: 0;
         right: 0;
         z-index: -1;
-        
+
     }
     .social-icon-list{
         flex-direction: column;
@@ -402,12 +404,12 @@ tr{
         padding: 10px 0;
     }
     .social-icon-list i:hover{
-        transform: translateX(10px) scale(1.1); 
+        transform: translateX(10px) scale(1.1);
     }
 }
 
 
-/* keyframes 
+/* keyframes
  */
 @keyframes header-logo {
     0%{
@@ -492,17 +494,17 @@ tr{
     border-radius: 14px;
     border: none;
     padding: 10px;
-   
+
 }
 
 form{
-    border: 2px solid mediumblue;
+    border: 2px solid orange;
     border-radius: 10px;
     color: black;
 }
 
 input{
-    
+
     border-radius: 10px;
     color: black;
 }
@@ -757,4 +759,95 @@ footer {
     .footer-distributed .footer-center i {
         margin-left: 0;
     }
-}       
+}
+
+
+.cirular{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: -webkit-linear-gradient(left, #E99331,#A0736E);
+}
+
+.wrapper{
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .card{
+  background: #fff;
+  width: calc(33% - 20px);
+  height: 300px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+}
+
+
+.wrapper .card .circle{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  cursor: default;
+}
+.card .circle .box,
+.card .circle .box span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.card .circle .box{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all 0.2s;
+}
+.card .circle:hover .box{
+  transform: translate(-50%, -50%) scale(0.91);
+}
+.card .circle .box span,
+.wrapper .card .text{
+  background: orange;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.circle .box span{
+  font-size: 38px;
+  font-family: sans-serif;
+  font-weight: 600;
+  transform: translate(-45%, -45%);
+  transition: all 0.1s;
+}
+.card .circle:hover .box span{
+  transform: translate(-45%, -45%) scale(1.09);
+}
+.card .text{
+  font-size: 20px;
+  font-weight: 600;
+}
+@media(max-width: 753px){
+  .wrapper{
+    max-width: 700px;
+  }
+  .wrapper .card{
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+}
+@media(max-width: 505px){
+  .wrapper{
+    max-width: 500px;
+  }
+  .wrapper .card{
+    width: 100%;
+  }
+}
