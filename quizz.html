@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-
-
-
-    <link rel="shortcut icon" type="x-icon" href="images/Pluga Logo3.png">
+    <link rel="shortcut icon" type="x-icon" href="images/agency.logo.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <!-- font awesome cdn  -->
     <script src="https://kit.fontawesome.com/46b7ceee20.js" crossorigin="anonymous"></script>
-
-    <!-- custom css  -->
-    <link rel="stylesheet" href="site2.css">
+    <link rel="stylesheet" href="site.css">
 
     <style>
         /* Your existing styles go here */
-
         .quiz-container {
             max-width: 500px;
             margin: auto;
             background-color: #fff;
             border-radius: 8px;
             padding: 20px;
+            border-color: orange;
         }
+
         h1 {
             color: #333;
         }
+
         label {
             display: block;
             margin: 10px 0;
         }
+
         input {
             margin-right: 5px;
         }
+
         button {
-            background-color: blue;
+            background-color: orange;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -45,17 +44,46 @@
             margin-top: 20px;
         }
 
-        </style>
+        /* New styles for pop-up */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Cookie', cursive;
+            font-size: 18px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .popup.green {
+            background-color: green; /* Green background */
+        }
+
+        .popup.yellow {
+            background-color: orange; /* Yellow background */
+        }
+
+        .popup.red {
+            background-color: red; /* Red background */
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Your existing HTML content goes here -->
 
     <!-- home page  -->
     <div class="home-page">
         <!-- header section  -->
         <div class="header-section">
             <!-- header logo  -->
-            <div class="logo">
-                <img src="images/Plug Logo2.png" style="width: 180px; height: auto;" alt="">
+            <div class="header-logo">
+                <h1>Blossom.</h1>
             </div>
 
             <!-- header navigation  -->
@@ -65,14 +93,14 @@
                 </div>
                 <ul class="header-nav-list" id="header-nav-list">
                     <li class="header-nav-tab ">
-                        <a href="plug-site.html">Home</a>
+                        <a href="index.html">Home</a>
                     </li>
                     <li class="header-nav-tab ">
-                        <a href="signup.html">Sign-up</a>
+                        <a href="plans.html">Get a Website</a>
                     </li>
-                    
+
                      <li class="header-nav-tab">
-                        <a href="contact2.html" >Contact Us</a>
+                        <a href="Contacts.html" >Contact Us</a>
                     </li >
                     <span class="highlight"></span>
                 </ul>
@@ -84,13 +112,13 @@
     </div>
 
 
+    <div class="contents" style="height: 100%; text-align: center; margin-top: 0px; border: none;">
+        <div class="quiz-container">
+            <h1>Website Quiz</h1>
 
-<div class="contents" style="height: 100%; text-align: center; margin-top: 0px; border: none;">
 
-<div class="quiz-container">
-    <h1>Website Quiz</h1>
 
-    <form id="quiz-form">
+             <form id="quiz-form">
         <!-- Your existing form goes here -->
 
          <form id="quiz-form">
@@ -120,94 +148,101 @@
     </form>
 
 
+            <p id="result"></p>
+        </div>
 
+        <!-- Pop-up container -->
+        <div id="popup" class="popup"></div>
 
+        <script>
+            function calculateScore() {
+                var score = 0;
 
-    <p id="result"></p>
-</div>
+                // Loop through each question and check the selected answer
+                for (var i = 1; i <= 5; i++) {
+                    var selectedOption = document.querySelector('input[name="q' + i + '"]:checked');
+                    if (selectedOption && selectedOption.value === 'A') {
+                        score++;
+                    }
+                }
 
-<script>
-    function calculateScore() {
-        var score = 0;
+                // Display the result
+                var resultElement = document.getElementById('result');
+                resultElement.innerHTML = 'Your score: ' + score + ' out of 5';
 
-        // Loop through each question and check the selected answer
-        for (var i = 1; i <= 5; i++) {
-            var selectedOption = document.querySelector('input[name="q' + i + '"]:checked');
-            if (selectedOption && selectedOption.value === 'A') {
-                score++;
+                // Additional result messages based on the score
+                var popup = document.getElementById('popup');
+                popup.style.display = 'block';
+
+                if (score === 5) {
+                    popup.innerHTML = 'Your venture does really need a website at this point.';
+                    popup.className = 'popup green';
+                } else if (score >= 3) {
+                    popup.innerHTML = 'Your venture might use a website at this point.';
+                    popup.className = 'popup yellow';
+                } else {
+                    popup.innerHTML = 'Your venture does not need a website at this point.';
+                    popup.className = 'popup red';
+                }
             }
-        }
+        </script>
 
-        // Display the result
-        var resultElement = document.getElementById('result');
-        resultElement.innerHTML = 'Your score: ' + score + ' out of 5';
+        <div class="outer-footer">
+          <div class="widget links">
+                            <ul class="style2">
+                               <li><a href="https://www.termsfeed.com/live/1ab1c651-5b25-43e4-8812-d7e8658a1dd3" style="color: black;">Privacy Policy</a></li>
+                              <li><a href="https://www.termsfeed.com/live/07228ddf-8948-43c8-8992-679d5a7536e2" style="color: black;">terms</a></li>
+                            </ul>
+                          </div>
+        <footer class="footer-distributed">
 
-        // Additional result messages based on the score
-        if (score === 5) {
-            resultElement.innerHTML += '<br>Your venture does really need a website at this point.';
-        } else if (score >= 3) {
-            resultElement.innerHTML += '<br>Your venture might use a website at this point.';
-        } else {
-            resultElement.innerHTML += '<br>Your venture does not need a website at this point.';
-        }
-    }
-</script>
+                <div class="footer-left">
+                    <h3>Blossom Velder<span>Digital<br> Agency</span></h3>
 
-<div class="outer-footer">
-  <div class="widget links">
-                    <ul class="style2">
-                       <li><a href="https://www.termsfeed.com/live/572f947c-5a58-463a-ab32-e2e2e2c76357" style="color: black; font-size: x-small;">Privacy Policy</a></li>
-                      <li><a href="https://www.termsfeed.com/live/3667089f-60d2-499c-958c-9b8a44bc1dec" style="color: black; font-size: x-small;">terms</a></li>
-                    </ul>
-                  </div>
-<footer class="footer-distributed">
+                    <p class="footer-links">
+                        <a href="index.html">Home</a>
+                        |
+                        <a href="Services.html">Business Services</a>
+                        |
+                        <a href="plans.html">Custom Website Services</a>
+                        |
+                        <a href="illustry.html">Illustration Services</a>
+                        |
+                        <a href="Contacts.html">Contact Us</a>
+                    </p>
 
-        <div class="footer-left">
-            <h3>Plug<span>-site</span></h3>
+                    <p class="footer-company-name">Copyright © 2021 <strong>Blossom Velder pty Ltd</strong> All rights reserved</p>
+                </div>
 
-            <p class="footer-links">
-                <a href="plug-site.html">Home</a>
-                |
-                <a href="plug-site.html">Get a Plug-site</a>
-                |
-                <a href="Contacts.html">Custom Website Services</a>
-                |
-                <a href="Contacts.html">Contact</a>
-            </p>
+                <div class="footer-center">
+                    <div>
+                        <i class="fa fa-map-marker"></i>
+                        <p><span>South Africa</span>
+                            Mpumalanga</p>
+                    </div>
 
-            <p class="footer-company-name">Copyright © 2021 <strong>Blossom Velder pty Ltd</strong> All rights reserved</p>
-        </div>
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <p>+27 793 795 379</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p><a href="mailto:eltonntando@gmail.com">blossomvelder@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-company-about">
+                        <span>About the company</span>
+                        <strong>Blossom Velder pty Ltd</strong> A Digital Design Agency, providing website development/design, graphic design, storybook illustrations, business establishment and business growth services. We also build cool & awesome advanced-tech products for businesses and for you.
+                    </p>
+                    <div class="footer-icons">
+                        <a href="https://web.facebook.com/blossomvelder/"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/blossomvelder01/?hl=en"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UC5AzuVWZuJUGYBChW05UKNQ?view_as=subscriber"><i class="fa fa-youtube"></i></a>
+                    </div>
+                </div>
+            </footer>
 
-        <div class="footer-center">
-            <div>
-                <i class="fa fa-map-marker"></i>
-                <p><span>South Africa</span>
-                    Mpumalanga</p>
-            </div>
-
-            <div>
-                <i class="fa fa-phone"></i>
-                <p>+27 793 795 379</p>
-            </div>
-            <div>
-                <i class="fa fa-envelope"></i>
-                <p><a href="mailto:blossomvelder@gmail.com">blossomvelder@gmail.com</a></p>
-            </div>
-        </div>
-        <div class="footer-right">
-            <p class="footer-company-about">
-                <span>About the company</span>
-                <strong>Plug-site by Blossom Velder pty Ltd</strong> The plug-site is a website that plugs people to what you offer & specially designed for you to elegantly display, share and market your work, skills, products or services with ease. Everything you do and about you or venture easily sharable in one click of the "Share-Plug" button, your own domain name www.yourname.co.za + we manage your website for you, you just tell us what to add, remove, etc. we are at your command.
-            </p>
-            <div class="footer-icons">
-                <a href="https://web.facebook.com/blossomvelder/"><i class="fa fa-facebook"></i></a>
-                <a href="https://www.instagram.com/blossomvelder01/?hl=en"><i class="fa fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UC5AzuVWZuJUGYBChW05UKNQ?view_as=subscriber"><i class="fa fa-youtube"></i></a>
-            </div>
-        </div>
-    </footer> 
-
-
-    <script src="site2.js"></script>
+            <script src="site.js"></script>
 </body>
 </html>
