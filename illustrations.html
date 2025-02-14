@@ -1,6 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <style>
+      .share-button {
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 10px;
+          border-radius: 14px;
+          cursor: pointer;
+          display: inline-block;
+          margin-bottom: 10px;
+          margin-left: 43%;
+      }
+
+      .social-platforms {
+          display: none;
+      }
+
+      .social-platforms.show {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 10px;
+          padding-bottom: 10px;
+          margin-right: 5px;
+      }
+
+      .social-platforms a {
+          margin: 8px;
+          color: white;
+          font-size: 30px;
+      }
+  </style>
+  <script>
+      function showSocialPlatforms() {
+          const socialPlatforms = document.querySelector('.social-platforms');
+          socialPlatforms.classList.toggle('show');
+      }
+
+      function shareLink(platform) {
+          var linkToShare = "https://www.blossomvelder.co.za/index.html"; // Replace with your link to share
+          var socialUrl;
+
+          if (platform === 'facebook') {
+              socialUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(linkToShare);
+          } else if (platform === 'instagram') {
+              socialUrl = 'https://www.instagram.com/share?url=' + encodeURIComponent(linkToShare);
+          } else if (platform === 'email') {
+              socialUrl = 'mailto:?body=' + encodeURIComponent(linkToShare);
+          } else if (platform === 'whatsapp') {
+              socialUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(linkToShare);
+          }
+
+          window.open(socialUrl, '_blank');
+      }
+  </script>
 
 
 <link rel="shortcut icon" type="x-icon" href="images/Illustry-Logo.png">
@@ -49,12 +105,15 @@
                     <i class="fa-solid fa-bars" id="mobile-nav-bar-icon"></i>
                 </div>
                 <ul class="header-nav-list" id="header-nav-list">
-                   <li class="header-nav-tab ">
+                    <li class="header-nav-tab ">
+                        <a href="illustrations.html">Illustrations</a>
+                    </li>
+                    <li class="header-nav-tab ">
                         <a href="index.html">Home</a>
                     </li>
 
                     <li class="header-nav-tab ">
-                        <a href="ideas.html">Storybook Ideas</a>
+                        <a href="ideas.html">Ideas</a>
                     </li>
 
                     <li class="header-nav-tab ">
@@ -73,7 +132,8 @@
 <div class="contents" style="height: 100%; text-align: center; margin-top: 0px; border: none;">
     <h1 style="text-align: center;" >Illustration Services🎨</h1>
 <div class="boxed">
-<p>📚 Tell Your Story through the power of digital illustration, enabling you to connect with your audience on a deeper level. We do illustrations for the following:</p>
+<p>📚 Tell Your Story through the power of digital illustration, enabling you to connect with your audience on a deeper level.
+  <br>We do illustrations for the following:</p>
 <p>
 
 
@@ -169,10 +229,8 @@
         </div>
 
       </div>
-    </div>
-  </div>
-  </div>
-</div>
+
+
 
 
 <div class="share-button" onclick="showSocialPlatforms()"><i class="fas fa-share"></i>Share Plug</div>
@@ -182,6 +240,10 @@
     <a href="https://www.blossomvelder.co.za/booking.html" onclick="shareLink('email')"><i class="fas fa-envelope" style="color: red"></i></a>
     <a href="https://www.blossomvelder.co.za/booking.html" onclick="shareLink('whatsapp')"><i class="fab fa-whatsapp" style="color: green"></i></a>
   </div>
+  </div>
+</div>
+</div>
+</div>
 
 
 
