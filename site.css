@@ -780,7 +780,6 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     max-width: 1250px;
-    width: 100%;
     margin: 150px auto;
     padding: 20px;
     gap: 20px;
@@ -803,7 +802,7 @@ footer {
 }
 
 .card-list .card-item img {
-    width: 100%;
+    width: 80%;
     aspect-ratio: 16/9;
     border-radius: 8px;
     object-fit: cover;
